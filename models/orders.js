@@ -18,6 +18,12 @@ const productSchema = new mongoose.Schema({
     required: true,
     min: 0,
     max: 255
+  },
+  quantity: {
+    type: Number,
+    min: 0,
+    max: 255,
+    required: true
   }
 });
 
@@ -43,17 +49,7 @@ const orderSchema = new mongoose.Schema({
     }),
     required: true
   },
-  products: [
-    {
-      product: [productSchema],
-      quantity: {
-        type: Number,
-        min: 0,
-        max: 255,
-        required: true
-      }
-    }
-  ],
+  products: [productSchema],
   dateCreate: {
     type: Date,
     required: true,
