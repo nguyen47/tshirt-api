@@ -1,3 +1,4 @@
+const auth = require("./routes/auth");
 const mongoose = require("mongoose");
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
@@ -16,12 +17,15 @@ mongoose
   .then(() => console.log("Connected to database"))
   .catch(err => console.error("Could not connect to database"));
 
+mongoose.set("useCreateIndex", true);
+
 app.use(express.json());
 app.use("/api/genres", genres);
 app.use("/api/customers", customers);
 app.use("/api/products", products);
 app.use("/api/orders", orders);
 app.use("/api/users", users);
+app.use("/api/auth", auth);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

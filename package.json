@@ -9,6 +9,7 @@
     "faker": "^4.1.0",
     "joi": "^14.0.4",
     "joi-objectid": "^2.0.0",
+    "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mongoose": "^5.3.10",
     "mongoose-seed": "^0.5.1"
