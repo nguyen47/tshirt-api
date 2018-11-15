@@ -26,6 +26,7 @@ mongoose
 mongoose.set("useCreateIndex", true);
 
 app.use(express.json());
+
 app.use("/api/genres", genres);
 app.use("/api/customers", customers);
 app.use("/api/products", products);
